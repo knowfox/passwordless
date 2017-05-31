@@ -1,0 +1,21 @@
+{
+    "name": "knowfox/passwordless",
+    "description": "Passwordless login.",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^5.4"
+    },
+    "license": "GPL v3",
+    "authors": [
+        {
+            "name": "Olav Schettler",
+            "email": "olav@schettler.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Knowfox\\Passwordless\\": "src/"
+        }
+    }
+}
