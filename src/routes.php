@@ -21,5 +21,9 @@ Route::group(['middleware' => 'web'], function () {
         'as' => 'auth.email-authenticate',
         'uses' => LoginController::class . '@authenticateEmail',
     ]);
+
+    Route::post('logout', LoginController::class . '@logout')
+        ->name('logout');
+
 });
 
