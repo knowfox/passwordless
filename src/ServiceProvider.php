@@ -11,6 +11,11 @@ class ServiceProvider extends IlluminateServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../migrations');
         $this->loadViewsFrom(__DIR__ . '/../views', 'passwordless');
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
+
+        $this->publishes([
+            __DIR__ . '/../views' => resource_path('views/vendor/passwordless'),
+        ]);
+
     }
 
     public function register()
