@@ -7,7 +7,7 @@
 
     <a class="btn btn-default" href="{{ $url }}">Log into {{config('app.name')}}</a>
 
-    If this button does not work, please try again or contact us at hello@{{ env('MAIL_DOMAIN') }}.
+    If this button does not work, please try again or contact us at hello{{ '@' . env('MAIL_DOMAIN') }}.
 
     Cheers,
     -- The {{config('app.name')}} Messenger
