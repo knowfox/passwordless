@@ -1,7 +1,7 @@
 <hr>
 
 <p>We improve {{config('app.name')}} every day. If you have suggestions, we love to hear from you.
-    <a href="mailto:hello@{{ env('MAIL_DOMAIN') }}">hello@{{config('app.name')}}</a>
+    <a href="mailto:hello{{ '@' . env('MAIL_DOMAIN') }}">hello{{ '@' . config('app.name')}}</a>
 </p>
 
 @yield('cancel')
