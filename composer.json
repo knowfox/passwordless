@@ -17,5 +17,12 @@
         "psr-4": {
             "Knowfox\\Passwordless\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Knowfox\\Passwordless\\ServiceProvider"
+            ]
+        }
     }
 }
