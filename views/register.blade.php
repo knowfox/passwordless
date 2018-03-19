@@ -3,53 +3,58 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Register with {{config('app.name')}} - No obligations or hidden costs</div>
-                    <div class="panel-body">
-                        <p>
-                            {{config('app.name')}} is private by default. To use our service, you need an account with us.
-                            Here you can create such an account. Please fill in all the fields.
-                        </p>
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
-                            {{ csrf_field() }}
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@lang('Register with :app', ['app' => config('app.name')])</h5>
+                        <div class="card-text">
+                            <p>
+                                @lang('There are no obligations or hidden costs.')
+                                @lang(':app is private by default.', ['app' => config('app.name')])
+                                @lang('To use our service, you need an account with us.')
+                                @lang('Here you can create such an account.')
+                            </p>
+                            <p>
+                                @lang('Please fill in all the fields.')
+                            </p>
+                            <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                                {{ csrf_field() }}
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <label for="name" class="control-label">@lang('Name')</label>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                    <div>
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                    @if ($errors->has('name'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                    @endif
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label for="email" class="control-label">@lang('E-Mail Address')</label>
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                    <div>
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
+                                <div class="form-group">
                                     <button type="submit" class="btn btn-primary">
-                                        Register
+                                        @lang('Register')
                                     </button>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
