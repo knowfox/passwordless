@@ -22,7 +22,7 @@ Route::group(['middleware' => 'web'], function () {
         'uses' => LoginController::class . '@authenticateEmail',
     ]);
 
-    Route::post('logout', LoginController::class . '@logout')
+    Route::get('logout', LoginController::class . '@logout')
         ->name('logout');
 
 });
