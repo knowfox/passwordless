@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-4 mx-auto">
+            <div class="col-md-6 mx-auto">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">@lang('Register with :app', ['app' => config('app.name')])</h5>
