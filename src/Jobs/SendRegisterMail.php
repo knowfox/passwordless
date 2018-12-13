@@ -33,11 +33,17 @@ class SendRegisterMail implements ShouldQueue
     {
         $user = $this->user;
 
-        Mail::send('passwordless::email-getting-started', [
+        Mail::send('passwordless::email.getting-started', [
             'user' => $user,
         ], function ($m) use ($user) {
             $m->from('hello@' . env('MAIL_DOMAIN'), config('app.name'));
-            $m->to($user->email, $user->name)->subject('Hello ' . $user->name . ', get started with ' . config('app.name') . '!');
+            $m
+                ->to($user->email, $user->name)
+                ->subject(__('passwordless::email.register_subject', [
+                    'user' => $user->name,
+                    'app' => config('app.name'),
+                ]
+            ));
         });
     }
 }

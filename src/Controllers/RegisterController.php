@@ -30,7 +30,8 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('passwordless::register');
+        $theme = config('passwordless.theme');
+        return view('passwordless::' . $theme . '.register');
     }
 
     /**
@@ -84,7 +85,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * @todo Adapt from Chosenreich
+     * @todo Adapt from Erinnertes
      * @param $what
      * @param $email
      * @return \Illuminate\Http\RedirectResponse

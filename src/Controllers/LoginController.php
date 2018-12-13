@@ -37,7 +37,8 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('passwordless::login');
+        $theme = config('passwordless.theme');
+        return view('passwordless::' . $theme . '/login');
     }
 
     public function login(Request $request)
@@ -55,7 +56,7 @@ class LoginController extends Controller
 
         // show the users a view saying "check your email"
         return redirect('/')
-            ->with('status', 'We have sent you an email. It contains a link for you to login.');
+            ->with('status', __('passwordless::email.sent'));
     }
 
     public function authenticateEmail($token)

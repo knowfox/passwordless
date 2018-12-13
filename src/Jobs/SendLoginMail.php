@@ -36,12 +36,17 @@ class SendLoginMail implements ShouldQueue
         $user = $this->user;
         $url = $this->url;
 
-        Mail::send('passwordless::email-login', [
+        Mail::send('passwordless::email.login', [
             'user' => $user,
             'url' => $url,
         ], function ($m) use ($user) {
             $m->from('hello@' . env('MAIL_DOMAIN'), config('app.name'));
-            $m->to($user->email)->subject('Hello ' . $user->name . ', here is your login link to ' . config('app.name') . '!');
+            $m->to($user->email)->subject(
+                __('passwordless::email.login_subject', [
+                    'user' => $user->name,
+                    'app' => config('app.name')
+                ])
+            );
         });
     }
 }
