@@ -18,6 +18,7 @@ class EmailLogin extends Model
 
     public static function createForEmail($email)
     {
+        self::where('email', $email)->delete();
         return self::create([
             'email' => $email,
             'token' => str_random(20)

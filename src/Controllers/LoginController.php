@@ -38,7 +38,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         $theme = config('passwordless.theme');
-        return view('passwordless::' . $theme . '/login');
+        return view('passwordless::' . $theme . '.login');
     }
 
     public function login(Request $request)
