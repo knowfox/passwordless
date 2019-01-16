@@ -56,7 +56,7 @@ class LoginController extends Controller
 
         // show the users a view saying "check your email"
         return redirect('/')
-            ->with('status', __('passwordless::email.sent'));
+            ->with('status', __('passwordless::email.login_sent'));
     }
 
     public function authenticateEmail($token)
