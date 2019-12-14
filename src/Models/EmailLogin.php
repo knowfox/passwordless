@@ -33,3 +33,4 @@ class EmailLogin extends Model
             ->firstOrFail();
     }
 }
+

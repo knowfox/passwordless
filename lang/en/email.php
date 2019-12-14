@@ -21,3 +21,4 @@ return [
     'register_text' => 'Thank you for registering with :app.',
     'register_subject' => 'Hello :user, get started with :app!',
 ];
+
