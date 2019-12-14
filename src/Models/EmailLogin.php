@@ -3,6 +3,7 @@
 namespace Knowfox\Passwordless\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use App\User;
 use Carbon\Carbon;
 
@@ -21,7 +22,7 @@ class EmailLogin extends Model
         self::where('email', $email)->delete();
         return self::create([
             'email' => $email,
-            'token' => str_random(20)
+            'token' => Str::random(20)
         ]);
     }
 
