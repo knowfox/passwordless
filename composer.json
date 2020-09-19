@@ -3,6 +3,7 @@
     "description": "Passwordless login.",
     "type": "library",
     "require": {
+        "laravel/ui": "^2.4"
     },
     "license": "GPL-3.0-or-later",
     "authors": [
